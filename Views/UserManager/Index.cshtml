@@ -1,0 +1,31 @@
+﻿@using RejestrOsobZaginionych.Models
+@model List<UserRolesViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>User Roles</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>UserName</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@user.UserId</td>
+            <td>@user.UserName</td>
+            <td>@string.Join(" , ", user.Roles.ToList())</td>
+            <td>
+                <a asp-action="Edit" asp-route-userID="@user.UserId">Edit</a> |
+                <a asp-action="Details" asp-route-userID="@user.UserId">Details</a> |
+                <a asp-action="Delete" asp-route-userID="@user.UserId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
