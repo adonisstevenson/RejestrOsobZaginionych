@@ -15,7 +15,7 @@
         public Person()
         {
             IsFound = false;    
-            Created = DateTime.Now; 
+            Created = DateTime.Now;
         }
     }
 

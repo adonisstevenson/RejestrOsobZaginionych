@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RejestrOsobZaginionych.Data;
@@ -8,6 +9,7 @@ using RejestrOsobZaginionych.Models;
 
 namespace RejestrOsobZaginionych.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class UserManagerController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;

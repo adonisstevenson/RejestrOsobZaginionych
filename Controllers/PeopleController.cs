@@ -47,10 +47,12 @@ namespace RejestrOsobZaginionych.Controllers
         // POST: PeopleController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Person person)
         {
             try
             {
+                _manager.AddPerson(person);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -69,10 +71,12 @@ namespace RejestrOsobZaginionych.Controllers
         // POST: PeopleController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Person person)
         {
             try
             {
+                _manager.UpdatePerson(person);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

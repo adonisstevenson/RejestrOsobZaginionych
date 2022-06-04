@@ -10,7 +10,6 @@ namespace RejestrOsobZaginionych
             using (var context = new PersonContext())
             {
                 context.Add(personModel);
-                // TODO: Wyjasnic dlaczego ID dodawanego filmu to >1000
                 try
                 {
                     context.SaveChanges();
