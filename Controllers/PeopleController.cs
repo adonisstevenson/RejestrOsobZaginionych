@@ -86,7 +86,7 @@ namespace RejestrOsobZaginionych.Controllers
         }
 
         // GET: PeopleController/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id)
         {
             return View();
